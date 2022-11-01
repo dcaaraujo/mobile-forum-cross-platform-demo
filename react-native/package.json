@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn react-native start"
+    "start": "yarn react-native start",
+    "android": "yarn react-native run-android",
+    "ios": "yarn react-native run-ios"
   },
   "dependencies": {
     "react": "18.1.0",
