@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AddReactNativeDemo</string>
+    <string name="show_rn_screen">Show RN Screen</string>
 </resources>
