@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Hack to get Flutter running in native project
+app/libs/flutter_*.jar
