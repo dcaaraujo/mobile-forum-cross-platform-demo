@@ -4,7 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '13.0'
 
 target 'AddReactNativeDemo' do
-  use_react_native!
+  use_react_native!(hermes_enabled: true, fabric_enabled: true)
 
   pod 'Alamofire'
 end
