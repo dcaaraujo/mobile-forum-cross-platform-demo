@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SharedFlutterPage extends StatefulWidget {
   const SharedFlutterPage({super.key});
@@ -28,34 +29,43 @@ class _SharedFlutterPageState extends State<SharedFlutterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Shared page')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Here we are in Flutter!',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  const SizedBox(width: 20),
-                  const Icon(Icons.flutter_dash)
-                ],
+    return WillPopScope(
+      onWillPop: () async {
+        SystemNavigator.pop(animated: true);
+        return true;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Shared page'),
+          leading: const BackButton(),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Here we are in Flutter!',
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    const SizedBox(width: 20),
+                    const Icon(Icons.flutter_dash)
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              child: const Text('Show alert'),
-              onPressed: () => _showFlutterAlert(context: context),
-            )
-          ],
+              const SizedBox(height: 20),
+              ElevatedButton(
+                child: const Text('Show alert'),
+                onPressed: () => _showFlutterAlert(context: context),
+              )
+            ],
+          ),
         ),
       ),
     );
