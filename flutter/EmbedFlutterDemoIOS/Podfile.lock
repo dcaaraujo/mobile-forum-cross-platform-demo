@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `../mobile_forum_demo_shared/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../mobile_forum_demo_shared/.ios/Flutter/FlutterPluginRegistrant`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "../mobile_forum_demo_shared/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "../mobile_forum_demo_shared/.ios/Flutter/FlutterPluginRegistrant"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  FlutterPluginRegistrant: 58acfb6cb31ee4ca14f920aba101815efda113ee
+
+PODFILE CHECKSUM: c5f8fb9d7fceac5de6e445421f52b12f547d2bbc
+
+COCOAPODS: 1.11.3
